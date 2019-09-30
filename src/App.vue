@@ -1,29 +1,54 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div class="app">
+    <section class="section header">
+      <global-header></global-header>
+    </section>
+    <div class="body-content">
+      <router-view></router-view>
     </div>
-    <router-view/>
+    <section class="section is-widescreen is-fullhd footer-section">
+      <footer class="footer">
+        <div class="content has-text-left">
+          <p>
+            Copyright © 2019. Measat Broadcast Network System Sdn. Bhd.
+            (240064-A). All Rights Reserved.
+          </p>
+          <div>
+            <a href="#">Terms</a> |
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+      </footer>
+    </section>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import GlobalHeader from "./components/General/Header.vue";
+
+export default {
+  components: {
+    GlobalHeader,
+  },
+};
+
+</script>
+<style lang="scss" scoped>
+.app {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  .header {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .footer-section {
+    padding: 0 !important;
+    .footer {
+      padding: 2rem 1rem  !important;
     }
   }
+
 }
 </style>
